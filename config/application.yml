@@ -1,0 +1,10 @@
+global-message: Configuration server is alive!
+
+management:
+  info:
+    env:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health, info

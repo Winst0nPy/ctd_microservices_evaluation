@@ -1,0 +1,5 @@
+--config_server: 8888
+--gateway_service: 8080
+--eureka_server: 8761
+--movie_service: 8070
+--catalog_service: 8071

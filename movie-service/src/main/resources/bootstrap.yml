@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: movie-service
+  cloud:
+    config:
+      uri: ${CONFIG_SERVER:http://localhost:8888}
+  profiles:
+    active: dev

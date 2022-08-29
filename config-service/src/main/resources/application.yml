@@ -8,8 +8,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Winst0nPy/ctd_microservices_evaluation
           searchPaths: config
+          uri: https://github.com/Winst0nPy/ctd_microservices_evaluation
 
 eureka:
   client:

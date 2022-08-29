@@ -11,12 +11,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/movies")
 public class MovieController {
-    private MovieService movieService;
+    private final MovieService movieService;
 
     @Autowired
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
     }
+
 
     @GetMapping("/{genre}")
     public ResponseEntity<List<Movie>> getMovieByGenre(@PathVariable String genre) {
@@ -27,5 +28,11 @@ public class MovieController {
     public ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
         return ResponseEntity.ok().body(movieService.save(movie));
     }
+
+    @GetMapping
+    public ResponseEntity<List<Movie>> getAllMovies(){
+        return ResponseEntity.ok().body(movieService.getAllMovies());
+    }
+
 }
 

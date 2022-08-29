@@ -1,6 +1,6 @@
 package com.dh.catalogservice.api.service.impl;
 
-import com.dh.catalogservice.api.service.CatalogService;
+
 import com.dh.catalogservice.api.service.MovieFeignClient;
 import com.dh.catalogservice.domain.model.dto.CatalogWS;
 import com.dh.catalogservice.domain.model.dto.MovieWS;
@@ -12,9 +12,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CatalogServiceImpl implements CatalogService {
+public class CatalogServiceImpl {
 
-    private MovieFeignClient movieFeignClient;
+    private final MovieFeignClient movieFeignClient;
+
 
     @Autowired
     public CatalogServiceImpl(MovieFeignClient movieFeignClient) {
@@ -27,6 +28,4 @@ public class CatalogServiceImpl implements CatalogService {
             return new CatalogWS(genre, movieResponse.getBody());
         return null;
     }
-
-
 }
